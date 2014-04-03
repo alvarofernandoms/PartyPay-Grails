@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${ticketInstance?.ticketValue}">
+				<li class="fieldcontain">
+					<span id="ticketValue-label" class="property-label"><g:message code="ticket.ticketValue.label" default="Ticket Value" /></span>
+					
+						<span class="property-value" aria-labelledby="ticketValue-label"><g:fieldValue bean="${ticketInstance}" field="ticketValue"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${ticketInstance?.title}">
 				<li class="fieldcontain">
 					<span id="title-label" class="property-label"><g:message code="ticket.title.label" default="Title" /></span>
