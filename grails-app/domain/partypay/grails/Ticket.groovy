@@ -2,7 +2,11 @@ package partypay.grails
 
 class Ticket {
 
-	Float ticketValue
+	
+	String title
+	String description
+	def ticketValue
+
 	
     static constraints = {
     }

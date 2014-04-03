@@ -5,9 +5,9 @@ package partypay.grails
 import org.junit.*
 import grails.test.mixin.*
 
-@TestFor(TicketController)
-@Mock(Ticket)
-class TicketControllerTests {
+@TestFor(EventController)
+@Mock(Event)
+class EventControllerTests {
 
     def populateValidParams(params) {
         assert params != null
@@ -17,139 +17,139 @@ class TicketControllerTests {
 
     void testIndex() {
         controller.index()
-        assert "/ticket/list" == response.redirectedUrl
+        assert "/event/list" == response.redirectedUrl
     }
 
     void testList() {
 
         def model = controller.list()
 
-        assert model.ticketInstanceList.size() == 0
-        assert model.ticketInstanceTotal == 0
+        assert model.eventInstanceList.size() == 0
+        assert model.eventInstanceTotal == 0
     }
 
     void testCreate() {
         def model = controller.create()
 
-        assert model.ticketInstance != null
+        assert model.eventInstance != null
     }
 
     void testSave() {
         controller.save()
 
-        assert model.ticketInstance != null
-        assert view == '/ticket/create'
+        assert model.eventInstance != null
+        assert view == '/event/create'
 
         response.reset()
 
         populateValidParams(params)
         controller.save()
 
-        assert response.redirectedUrl == '/ticket/show/1'
+        assert response.redirectedUrl == '/event/show/1'
         assert controller.flash.message != null
-        assert Ticket.count() == 1
+        assert Event.count() == 1
     }
 
     void testShow() {
         controller.show()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/ticket/list'
+        assert response.redirectedUrl == '/event/list'
 
         populateValidParams(params)
-        def ticket = new Ticket(params)
+        def event = new Event(params)
 
-        assert ticket.save() != null
+        assert event.save() != null
 
-        params.id = ticket.id
+        params.id = event.id
 
         def model = controller.show()
 
-        assert model.ticketInstance == ticket
+        assert model.eventInstance == event
     }
 
     void testEdit() {
         controller.edit()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/ticket/list'
+        assert response.redirectedUrl == '/event/list'
 
         populateValidParams(params)
-        def ticket = new Ticket(params)
+        def event = new Event(params)
 
-        assert ticket.save() != null
+        assert event.save() != null
 
-        params.id = ticket.id
+        params.id = event.id
 
         def model = controller.edit()
 
-        assert model.ticketInstance == ticket
+        assert model.eventInstance == event
     }
 
     void testUpdate() {
         controller.update()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/ticket/list'
+        assert response.redirectedUrl == '/event/list'
 
         response.reset()
 
         populateValidParams(params)
-        def ticket = new Ticket(params)
+        def event = new Event(params)
 
-        assert ticket.save() != null
+        assert event.save() != null
 
         // test invalid parameters in update
-        params.id = ticket.id
+        params.id = event.id
         //TODO: add invalid values to params object
 
         controller.update()
 
-        assert view == "/ticket/edit"
-        assert model.ticketInstance != null
+        assert view == "/event/edit"
+        assert model.eventInstance != null
 
-        ticket.clearErrors()
+        event.clearErrors()
 
         populateValidParams(params)
         controller.update()
 
-        assert response.redirectedUrl == "/ticket/show/$ticket.id"
+        assert response.redirectedUrl == "/event/show/$event.id"
         assert flash.message != null
 
         //test outdated version number
         response.reset()
-        ticket.clearErrors()
+        event.clearErrors()
 
         populateValidParams(params)
-        params.id = ticket.id
+        params.id = event.id
         params.version = -1
         controller.update()
 
-        assert view == "/ticket/edit"
-        assert model.ticketInstance != null
-        assert model.ticketInstance.errors.getFieldError('version')
+        assert view == "/event/edit"
+        assert model.eventInstance != null
+        assert model.eventInstance.errors.getFieldError('version')
         assert flash.message != null
     }
 
     void testDelete() {
         controller.delete()
         assert flash.message != null
-        assert response.redirectedUrl == '/ticket/list'
+        assert response.redirectedUrl == '/event/list'
 
         response.reset()
 
         populateValidParams(params)
-        def ticket = new Ticket(params)
+        def event = new Event(params)
 
-        assert ticket.save() != null
-        assert Ticket.count() == 1
+        assert event.save() != null
+        assert Event.count() == 1
 
-        params.id = ticket.id
+        params.id = event.id
 
         controller.delete()
 
-        assert Ticket.count() == 0
-        assert Ticket.get(ticket.id) == null
-        assert response.redirectedUrl == '/ticket/list'
+        assert Event.count() == 0
+        assert Event.get(event.id) == null
+        assert response.redirectedUrl == '/event/list'
     }
 }

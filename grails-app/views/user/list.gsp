@@ -28,6 +28,8 @@
 					
 						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
 					
+						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
+					
 						<g:sortableColumn property="cpf" title="${message(code: 'user.cpf.label', default: 'Cpf')}" />
 					
 						<g:sortableColumn property="postalCode" title="${message(code: 'user.postalCode.label', default: 'Postal Code')}" />
