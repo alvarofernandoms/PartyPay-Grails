@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<resource:include components="autoComplete, dateChooser" autoComplete="[skin: 'default']" />
+		<resource:richTextEditor type="advanced" />
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'ticket.label', default: 'Ticket')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>

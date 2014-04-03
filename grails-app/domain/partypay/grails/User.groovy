@@ -9,7 +9,7 @@ class User {
 	String rg
 	String address
 	String postalCode
-
+    
     static constraints = {
     	name blank: false, nullable: false
     	email(email:true, blank: false, nullable: false)
