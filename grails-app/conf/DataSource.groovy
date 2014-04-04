@@ -15,7 +15,7 @@ environments {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/partypay_grails?useUnicode=yes&characterEncoding=UTF-8"
             username = "root"
-            password = "mysqlmysql"
+            password = ""
         }
     }
     test {
@@ -23,7 +23,7 @@ environments {
             dbCreate = "update"
             url = "jdbc:mysql://localhost/partypay_grails_prod?useUnicode=yes&characterEncoding=UTF-8"
             username = "root"
-            password = "mysqlmysql"
+            password = ""
         }
     }
     production {
@@ -31,7 +31,7 @@ environments {
             dbCreate = "update"
             url = "jdbc:mysql://localhost/partypay_grails_prod?useUnicode=yes&characterEncoding=UTF-8"
             username = "root"
-            password = "mysqlmysql"
+            password = ""
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000
