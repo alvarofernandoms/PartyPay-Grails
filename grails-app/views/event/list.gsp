@@ -31,11 +31,7 @@
 						<g:sortableColumn property="adressEvent" title="${message(code: 'event.adressEvent.label', default: 'Adress Event')}" />
 					
 						<g:sortableColumn property="description" title="${message(code: 'event.description.label', default: 'Description')}" />
-					
-						<g:sortableColumn property="latitude" title="${message(code: 'event.latitude.label', default: 'Latitude')}" />
-					
-						<g:sortableColumn property="longitude" title="${message(code: 'event.longitude.label', default: 'Longitude')}" />
-					
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -50,9 +46,6 @@
 					
 						<td>${fieldValue(bean: eventInstance, field: "description")}</td>
 					
-						<td>${fieldValue(bean: eventInstance, field: "latitude")}</td>
-					
-						<td>${fieldValue(bean: eventInstance, field: "longitude")}</td>
 					
 					</tr>
 				</g:each>

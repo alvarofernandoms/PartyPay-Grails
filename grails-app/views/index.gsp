@@ -123,7 +123,21 @@
 			<div id="controller-list" role="navigation">
 				<div class="row">
 					<div class="span6">
-						<a href="${createLink(controller:'User')}"> Divulgue aqui o seu evento </a>
+						<a href="${createLink(controller:'User')}"> Create a User </a>
+				</div>
+				<div class="row">
+					<div class="span6">
+						<a href="${createLink(controller:'login')}"> Log-in </a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span6">
+						<a href="${createLink(controller:'Event', action:'create')}"> Promote your Event </a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span6">
+						<a href="${createLink(controller:'Event', action:'create')}"> See Events </a>
 					</div>
 				</div>
 			</div>

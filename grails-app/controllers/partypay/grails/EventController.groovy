@@ -1,6 +1,9 @@
 package partypay.grails
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(['IS_AUTHENTICATED_FULLY'])
 
 class EventController {
 
@@ -98,5 +101,10 @@ class EventController {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'event.label', default: 'Event'), id])
             redirect(action: "show", id: id)
         }
+    }
+
+    def allEvents ={
+
+        render(view:'allEvents')
     }
 }

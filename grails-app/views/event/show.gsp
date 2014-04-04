@@ -82,7 +82,7 @@
 					<span id="ticket-label" class="property-label"><g:message code="event.ticket.label" default="Ticket" /></span>
 					
 						<g:each in="${eventInstance.ticket}" var="t">
-						<span class="property-value" aria-labelledby="ticket-label"><g:link controller="ticket" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="ticket-label"><g:link controller="ticket" action="show" id="${t.id}">${t?.title}</g:link></span>
 						</g:each>
 					
 				</li>

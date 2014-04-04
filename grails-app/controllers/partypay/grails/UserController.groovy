@@ -1,13 +1,16 @@
 package partypay.grails
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(['IS_AUTHENTICATED_FULLY'])
 
 class UserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        redirect(action: "create", params: params)
+        redirect(action: "list", params: params)
     }
 
     def list(Integer max) {

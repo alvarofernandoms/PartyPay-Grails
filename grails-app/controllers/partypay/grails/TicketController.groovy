@@ -1,6 +1,9 @@
 package partypay.grails
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(['IS_AUTHENTICATED_FULLY'])
 
 class TicketController {
 
@@ -27,7 +30,7 @@ class TicketController {
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'ticket.label', default: 'Ticket'), ticketInstance.id])
-        redirect(action: "show", id: ticketInstance.id)
+        redirect(controller: "event", action: "create", id: ticketInstance.id)
     }
 
     def show(Long id) {

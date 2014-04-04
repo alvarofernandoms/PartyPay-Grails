@@ -31,7 +31,10 @@
 	<label for="description">
 		<g:message code="event.description.label" default="Description" />
 	</label>
+	<div class="row">
+	</div>
 	<richui:richTextEditor name="description" value="${eventInstance?.description}" width="525"/>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: eventInstance, field: 'latitude', 'error')} ">
@@ -55,6 +58,11 @@
 		<g:message code="event.ticket.label" default="Ticket" />
 		
 	</label>
-	<g:select name="ticket" from="${partypay.grails.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${eventInstance?.ticket*.title}" class="many-to-many"/>
+	<g:select name="ticket" from="${partypay.grails.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${eventInstance?.ticket*.id}" class="many-to-many"/>
 </div>
+	<br>
+	<label for="ticketcreate">
+		<a href="${createLink(controller:'Ticket', action:'create')}"> Create new ticket for the event </a>
+	</label>
 
+		

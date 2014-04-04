@@ -13,5 +13,7 @@ class Event{
     static constraints = {
     	nameEvent blank: false, nullable: false
     	dateEvent blanK: false, nullable: false
+    	latitude display: false
+    	longitude display: false
     }
 }

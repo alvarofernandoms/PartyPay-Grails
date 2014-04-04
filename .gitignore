@@ -2,4 +2,4 @@
 *.classpath
 *.project
 ./target/classes/*.class
-./conf/Datasource.groovy
+./grails-app/conf/Datasource.groovy

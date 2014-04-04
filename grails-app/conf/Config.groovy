@@ -64,6 +64,7 @@ grails.plugin.springsecurity.logout.postOnly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+          
     }
     production {
         grails.logging.jul.usebridge = false
@@ -104,11 +105,17 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/index.gsp':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
+  '/**/ticket/create/**':           ['permitAll'],
+  '/**/ticket/save':                ['permitAll'],
+  '/**/event/save':                 ['permitAll'],
+  '/**/event/show/**':                ['permitAll'],
   '/**/event/index/**':             ['permitAll'],
   '/**/user/create/**':             ['permitAll'],
+  '/**/user/index/**':              ['permitAll'],
   '/**/event/list/**':              ['permitAll'],
+  '/**/event/maps/**':              ['permitAll'],
   '/**/css/**':                     ['permitAll'],
+  '/**/event/create/**':            ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
-

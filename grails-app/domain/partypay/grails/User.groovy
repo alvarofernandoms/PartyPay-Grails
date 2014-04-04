@@ -5,13 +5,8 @@ class User {
 	transient springSecurityService
 
 	String username
+	String realName
 	String password
-	String email	
-	String cpf
-	String rg
-	String address
-	String postalCode
-
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
@@ -21,10 +16,7 @@ class User {
 
 	static constraints = {
 		username blank: false, unique: true
-		password (password:true, blank: false, nullable: false)
-     	email(email:true, blank: false, nullable: false)
-    	cpf(cpf:true, blank: false, nullable: false)
-    	postalCode(cep:true, blank: false, nullable: false)
+		password blank: false
 	}
 
 	static mapping = {

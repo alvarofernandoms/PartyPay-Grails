@@ -1,6 +1,9 @@
 package partypay.grails
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugin.springsecurity.annotation.Secured
+
+@Secured(['IS_AUTHENTICATED_FULLY'])
 
 class ConcourseController {
 
