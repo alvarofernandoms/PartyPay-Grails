@@ -55,6 +55,6 @@
 		<g:message code="event.ticket.label" default="Ticket" />
 		
 	</label>
-	<g:select name="ticket" from="${partypay.grails.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${eventInstance?.ticket*.id}" class="many-to-many"/>
+	<g:select name="ticket" from="${partypay.grails.Ticket.list()}" multiple="multiple" optionKey="id" size="5" value="${eventInstance?.ticket*.title}" class="many-to-many"/>
 </div>
 

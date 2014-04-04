@@ -59,6 +59,8 @@ grails.exceptionresolver.params.exclude = ['password']
 // configure auto-caching of queries by default (if false you can cache individual queries with 'cache: true')
 grails.hibernate.cache.queries = false
 
+grails.plugin.springsecurity.logout.postOnly = false
+
 environments {
     development {
         grails.logging.jul.usebridge = true
@@ -88,4 +90,25 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'partypay.grails.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'partypay.grails.UserAuthority'
+grails.plugin.springsecurity.authority.className = 'partypay.grails.Authority'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+  '/**/event/index/**':             ['permitAll'],
+  '/**/user/create/**':             ['permitAll'],
+  '/**/event/list/**':              ['permitAll'],
+  '/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+

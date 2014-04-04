@@ -36,6 +36,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://repo.spring.io/milestone"
     }
 
     dependencies {
@@ -62,5 +63,6 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.1'
         compile ':br-validation:0.3'
         compile ':richui:0.8'
+        compile ':shopping-cart:0.8.2'
     }
 }

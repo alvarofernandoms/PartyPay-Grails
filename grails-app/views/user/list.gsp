@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="name" title="${message(code: 'user.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
+						<g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
 					
 						<g:sortableColumn property="password" title="${message(code: 'user.password.label', default: 'Password')}" />
+					
+						<g:sortableColumn property="email" title="${message(code: 'user.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="cpf" title="${message(code: 'user.cpf.label', default: 'Cpf')}" />
 					
 						<g:sortableColumn property="postalCode" title="${message(code: 'user.postalCode.label', default: 'Postal Code')}" />
 					
-						<g:sortableColumn property="address" title="${message(code: 'user.address.label', default: 'Address')}" />
+						<g:sortableColumn property="accountExpired" title="${message(code: 'user.accountExpired.label', default: 'Account Expired')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${userInstanceList}" status="i" var="userInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "name")}</g:link></td>
-					
-						<td>${fieldValue(bean: userInstance, field: "email")}</td>
+						<td><g:link action="show" id="${userInstance.id}">${fieldValue(bean: userInstance, field: "username")}</g:link></td>
 					
 						<td>${fieldValue(bean: userInstance, field: "password")}</td>
+					
+						<td>${fieldValue(bean: userInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: userInstance, field: "cpf")}</td>
 					
 						<td>${fieldValue(bean: userInstance, field: "postalCode")}</td>
 					
-						<td>${fieldValue(bean: userInstance, field: "address")}</td>
+						<td><g:formatBoolean boolean="${userInstance.accountExpired}" /></td>
 					
 					</tr>
 				</g:each>

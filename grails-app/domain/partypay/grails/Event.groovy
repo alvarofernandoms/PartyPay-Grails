@@ -1,6 +1,6 @@
 package partypay.grails
 
-class Event {
+class Event{
 
 	String nameEvent
 	String description
