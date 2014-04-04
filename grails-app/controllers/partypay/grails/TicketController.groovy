@@ -102,4 +102,32 @@ class TicketController {
             redirect(action: "show", id: id)
         }
     }
+
+    def addToShopCart(Ticket ticket)
+    {
+        def ticketInstance = Ticket.get(id)
+        ticketInstance.addToShoppingCart()
+        render(view: "cart", model: [ticketInstance: ticketInstance])
+    }
+
+    def removeToShopCart(Ticket ticket)
+    {
+        def ticketInstance = Ticket.get(id)
+        ticketInstance.removeToShoppingCart()
+        render(view: "cart", model: [ticketInstance: ticketInstance])
+    }
+
+    def addSomeToShopCart(Ticket ticket, int quantity)
+    {
+        def ticketInstance = Ticket.get(id)
+        ticketInstance.addQuantityToShoppingCart(ticket, quantity)
+        render(view: "cart", model: [ticketInstance: ticketInstance])
+    }
+
+    def cleanShopCart(Ticket ticket)
+    {
+        def ticketInstance = Ticket.get(id)
+        ticketInstance.shoppingCartService.emptyShoppingCart()
+        render(view: "cart", model: [ticketInstance: ticketInstance])
+    }
 }

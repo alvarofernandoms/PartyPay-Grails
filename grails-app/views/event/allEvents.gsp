@@ -62,7 +62,7 @@
 				                            <td>
 				                                <g:form action="addToCart">
 				                                    <g:hiddenField name="eventId" value="${ticket.id}" />
-				                                    <g:submitButton action="" name="addToCart"
+				                                    <g:submitButton contoller="ticket" action="addToShopCart" name="addToCart"
 				                                        value="Add To Cart" />
 				                                </g:form>
 				                            </td>

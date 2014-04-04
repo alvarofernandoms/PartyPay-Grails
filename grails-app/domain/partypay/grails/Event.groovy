@@ -1,6 +1,6 @@
 package partypay.grails
 
-class Event{
+class Event extends com.metasieve.shoppingcart.Shoppable{
 
 	String nameEvent
 	String description
