@@ -2,18 +2,19 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>PartyPay</title>
+		<link href="${resource(dir: 'css', file: 'main.css')}" type="text/css" rel=stylesheet/>
 		<style type="text/css" media="screen">
 			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
+				background-color: #ffffff;
+				border: .2em solid #2c3e50;
 				margin: 2em 2em 1em;
 				padding: 1em;
 				width: 12em;
 				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
+				-moz-box-shadow: 0px 0px 1.25em #2c3e50;
+				-webkit-box-shadow: 0px 0px 1.25em #2c3e50;
+				box-shadow: 0px 0px 1.25em #2c3e50;
 				-moz-border-radius: 0.6em;
 				-webkit-border-radius: 0.6em;
 				border-radius: 0.6em;
@@ -80,7 +81,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	</body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
 			<h1>Application Status</h1>
@@ -103,41 +104,21 @@
 			</ul>
 		</div>
 		<div id="page-body" role="main">
-			
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<h1>PartyPay</h1>
+			<p>O sistema web, junto com o aplicativo, objetiva possibilidades de venda e disponibilização de ingressos para eventos diversos como shows, cinemas, boates. Depois de efetivado a compra do ingresso via web, será gerado um ingresso eletrônico que contém um código QR onde o mesmo será armazenado em um dispositivo móvel, sendo que para habilitação da entrada de uma pessoa ao evento, bastará que ela mostre o código QR que poderá ser lido por algum tipo de dispositivo que contenha uma câmera ou qualquer aparelho que faça leitura de QR code para fazer a leitura do código.</p>
 
 			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+				<h2>Menu:</h2>
 				<ul>
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
 					</g:each>
 				</ul>
-			</div>
-		
-			<h1>Welcome to Grails</h1>			
+			</div>		
 			<div id="controller-list" role="navigation">
 				<div class="row">
 					<div class="span6">
-						<a href="${createLink(controller:'User')}"> Create a User </a>
-				</div>
-				<div class="row">
-					<div class="span6">
-						<a href="${createLink(controller:'login')}"> Log-in </a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span6">
-						<a href="${createLink(controller:'Event', action:'create')}"> Promote your Event </a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span6">
-						<a href="${createLink(controller:'Event', action:'create')}"> See Events </a>
+						<a href="${createLink(controller:'User')}"> Divulgue aqui o seu evento </a>
 					</div>
 				</div>
 			</div>
