@@ -64,5 +64,6 @@ grails.project.dependency.resolution = {
         compile ':br-validation:0.3'
         compile ':richui:0.8'
         compile ':shopping-cart:0.8.2'
+        compile ':spring-security-core:2.0-RC2'
     }
 }
